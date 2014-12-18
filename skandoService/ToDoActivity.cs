@@ -6,7 +6,9 @@ using Android.Widget;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
-
+using Xamarin.Controls;
+using ZXing;
+using ZXing.Mobile;
 
 namespace skandoService
 {
@@ -26,12 +28,13 @@ namespace skandoService
 
 		//EditText containing the "New ToDo" text
 		private EditText textNewToDo;
-
 		//Progress spinner to use for table operations
 		private ProgressBar progressBar;
 
 		const string applicationURL = @"https://skandoservice.azure-mobile.net/";
 		const string applicationKey = @"ZwaPawlftdKLDCIAocvNXzXkqnXSvW52";
+
+		MobileBarcodeScanner scanner;
 
 		protected override async void OnCreate (Bundle bundle)
 		{
@@ -39,6 +42,31 @@ namespace skandoService
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Activity_To_Do);
+			scanner = new MobileBarcodeScanner(this);
+
+
+			// botao de scan
+
+			Button button = FindViewById<Button> (Resource.Id.scanBNT);
+
+			button.Click += async delegate {
+				
+							base.OnCreate (bundle);
+				AlertCenter.Default.Init (Application);
+				AlertCenter.Default.PostMessage ("Abre o scan", "Iniciando scaneamento do produto", Resource.Drawable.icon);
+
+				//Tell our scanner to use the default overlay
+				scanner.UseCustomOverlay = true;
+				scanner.TopText = "Hold the camera up to the barcode\nAbout 6 inches away";
+				scanner.BottomText = "Wait for the barcode to automatically scan!";
+				var result = await scanner.Scan();
+				HandleScanResult(result);
+
+			};
+		
+
+
+
 
 			progressBar = FindViewById<ProgressBar> (Resource.Id.loadingProgressBar);
 
@@ -205,6 +233,17 @@ namespace skandoService
 
 			#endregion
 
+		}
+		void HandleScanResult (ZXing.Result result)
+		{
+			string msg = "";
+
+			if (result != null && !string.IsNullOrEmpty(result.Text))
+				msg = "Found Barcode: " + result.Text;
+			else
+				msg = "Scanning Canceled!";
+
+			this.RunOnUiThread(() => Toast.MakeText(this, msg, ToastLength.Short).Show());
 		}
 	}
 }

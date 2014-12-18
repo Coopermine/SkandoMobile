@@ -14,9 +14,8 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AssemblyName>skandoService</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>
-    </TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -67,6 +66,18 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\Components\azure-mobile-services-1.2.5\lib\android\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\Components\zxing.net.mobile-1.4.7\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.monoandroid">
+      <HintPath>..\Components\zxing.net.mobile-1.4.7\lib\android\zxing.monoandroid.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile">
+      <HintPath>..\Components\zxing.net.mobile-1.4.7\lib\android\ZXing.Net.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="AlertCenter.Android">
+      <HintPath>..\Components\alert-center-1.0.5\lib\android\AlertCenter.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -92,6 +103,7 @@
     <AndroidResource Include="Resources\menu\activity_main.xml" />
     <AndroidResource Include="Resources\values-v11\styles.xml" />
     <AndroidResource Include="Resources\values-v14\styles.xml" />
+    <AndroidResource Include="Resources\drawable\icon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -100,6 +112,14 @@
   <ItemGroup>
     <XamarinComponentReference Include="azure-mobile-services">
       <Version>1.2.5</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="zxing.net.mobile">
+      <Version>1.4.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="alert-center">
+      <Version>1.0.5</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

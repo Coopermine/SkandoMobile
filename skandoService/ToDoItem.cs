@@ -15,8 +15,11 @@ namespace skandoService
 	}
 
 	public class ToDoItemWrapper : Java.Lang.Object
+
 	{
+
 		public ToDoItemWrapper (ToDoItem item)
+
 		{
 			ToDoItem = item;
 		}

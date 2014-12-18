@@ -2,11 +2,31 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.bola9" />
   <MonoDevelop.Ide.Workbench ActiveDocument="skandoService\ToDoActivity.cs">
     <Files>
-      <File FileName="skandoService\ToDoActivity.cs" Line="52" Column="52" />
+      <File FileName="skandoService\ToDoActivity.cs" Line="4" Column="4" />
+      <File FileName="skandoService\ToDoItem.cs" Line="25" Column="25" />
+      <File FileName="skandoService\ToDoItemAdapter.cs" Line="48" Column="48" />
+      <File FileName="skandoService\Resources\Resource.designer.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="skandoService" expanded="True">
+            <Node name="ComponentReferenceFolder" expanded="True" />
+            <Node name="Assets" expanded="True" />
+            <Node name="Properties" expanded="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True" />
+              <Node name="values" expanded="True" />
+            </Node>
+            <Node name="ToDoActivity.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.skandoService MonoForAntroid.PreferredDevice="Nexus 4" />
 </Properties>

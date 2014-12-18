@@ -1,0 +1,1 @@
+C:\Users\pc\Documents\Projects\SkandoMobile\Components\zxing.net.mobile-1.4.7\samples\Sample.Android\Sample.Android\obj\Debug\Sample.Android.csprojResolveAssemblyReference.cache
